@@ -9,10 +9,10 @@ import { NavController } from '@ionic/angular';
 export class LoginPage {
   constructor(private navCtrl: NavController) {}
 
-  // Puedes agregar más métodos según sea necesario
+  // Puedo agregar más métodos según sea necesario
 
   // Método para navegar hacia otra página
   navigateToHome() {
-    this.navCtrl.navigateForward('/home'); // Reemplaza '/home' con la ruta que desees
+    this.navCtrl.navigateForward('/login'); // Reemplazar con la ruta que desee
   }
 }

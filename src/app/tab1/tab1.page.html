@@ -1,18 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="navigateToLogin()">
+        <ion-icon slot="start" name="log-in"></ion-icon>
+        Iniciar Sesión
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-
-  <!-- Botón para acceder a la página de inicio de sesión -->
   <div class="ion-padding">
     <h2 class="ion-text-center" style="margin-bottom: 20px; color: #333;">Bienvenido a nuestra aplicación</h2>
-    <ion-button expand="full" color="primary" (click)="navigateToLogin()">
-      <ion-icon slot="start" name="log-in"></ion-icon>
-      Iniciar Sesión
-    </ion-button>
   </div>
+  <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
+
+<script>
+  function navigateToLogin() {
+    window.location.href = '/login';
+  }
+</script>
