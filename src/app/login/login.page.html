@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio de Sesión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Evitar el envío del formulario para validación
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            let valid = true;
+
+            // Limpiar mensajes de error
+            document.getElementById('error-message').innerHTML = '';
+            document.getElementById('success-message').innerHTML = '';
+
+            // Validaciones simples
+            if (!email.includes('@')) {
+                document.getElementById('error-message').innerHTML += '<p>Por favor ingrese un correo electrónico válido.</p>';
+                valid = false;
+            }
+            if (password.length < 6) {
+                document.getElementById('error-message').innerHTML += '<p>La contraseña debe tener al menos 6 caracteres.</p>';
+                valid = false;
+            }
+
+            // Mostrar mensaje de éxito si es válido
+            if (valid) {
+                document.getElementById('success-message').innerHTML = '<p>Inicio de sesión exitoso.</p>';
+                // Aquí podrías agregar lógica para redirigir al usuario a otra página o realizar la autenticación.
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-white">
+    <header class="bg-blue-500 p-4">
+        <h1 class="text-center text-2xl">Página de Inicio de Sesión</h1>
+    </header>
+    <div class="p-4">
+        <div class="mb-4">
+            <h2 class="text-xl">¡Bienvenido!</h2>
+            <p>Inicia sesión en tu cuenta.</p>
+        </div>
+
+        <!-- Mensajes de error/éxito -->
+        <div id="error-message" class="mb-4 text-red-500"></div>
+        <div id="success-message" class="mb-4 text-green-500"></div>
+
+        <!-- Formulario de inicio de sesión -->
+        <form onsubmit="validateForm(event)">
+            <div class="mb-4">
+                <label class="block mb-2" for="email">
+                    <i class="fas fa-envelope"></i> Correo Electrónico
+                </label>
+                <input class="w-full p-2 text-black" type="email" id="email" name="email" required>
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2" for="password">
+                    <i class="fas fa-lock"></i> Contraseña
+                </label>
+                <input class="w-full p-2 text-black" type="password" id="password" name="password" required>
+            </div>
+            <button class="w-full bg-green-500 p-2 text-white flex items-center justify-center" type="submit">
+                <i class="fas fa-sign-in-alt mr-2"></i> Iniciar Sesión
+            </button>
+        </form>
+    </div>
+</body>
+</html>
