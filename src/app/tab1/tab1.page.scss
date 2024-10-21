@@ -1,0 +1,22 @@
+:root {
+    --ion-color-custom-button: #FFD700; /* Color amarillo para el botón */
+    --ion-color-custom-button-rgb: 255, 215, 0;
+    --ion-color-custom-button-contrast: #000000;
+    --ion-color-custom-button-contrast-rgb: 0, 0, 0;
+    --ion-color-custom-button-shade: #e6c200;
+    --ion-color-custom-button-tint: #ffdb33;
+  }
+  
+  .custom-button {
+    --padding-start: 20px;
+    --padding-end: 20px;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    font-size: 18px; /* Ajusta el tamaño de la fuente */
+    --background: var(--ion-color-custom-button);
+    --color: var(--ion-color-custom-button-contrast);
+  }
+  
+  ion-content {
+    --background: #0000FF; /* Color azul para el fondo */
+  }
