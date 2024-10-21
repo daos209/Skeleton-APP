@@ -1,33 +1,18 @@
-<<<<<<< HEAD
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
+  constructor(private navCtrl: NavController) {}
 
-  constructor() { }
+  // Puedes agregar más métodos según sea necesario
 
-  ngOnInit() {
+  // Método para navegar hacia otra página
+  navigateToHome() {
+    this.navCtrl.navigateForward('/home'); // Reemplaza '/home' con la ruta que desees
   }
-
 }
-=======
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
-})
-export class LoginPage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
->>>>>>> 65fa4f15d17dc10da277c2826533a01c817065bf
