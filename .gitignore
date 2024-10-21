@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .angular
 node_modules
+=======
+>>>>>>> 65fa4f15d17dc10da277c2826533a01c817065bf
 # Logs
 logs
 *.log
