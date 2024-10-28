@@ -8,6 +8,7 @@ import { AnimationController } from '@ionic/angular';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
+
   name: string = '';
   surname: string = '';
   educationLevel: string = '';
