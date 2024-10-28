@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,12 +7,16 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  constructor(private navCtrl: NavController) {}
+  username: string;
+  password: string;
 
-  // Puedo agregar más métodos según sea necesario
+  constructor(private router: Router) {}
 
-  // Método para navegar hacia otra página
-  navigateToHome() {
-    this.navCtrl.navigateForward('/login'); // Reemplazar con la ruta que desee
+  onSubmit() {
+    if (this.username && this.password) {
+      this.router.navigate(['/home'], {
+        queryParams: { username: this.username }
+      });
+    }
   }
 }
