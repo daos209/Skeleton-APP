@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="name" (ionFocus)="animateInput('name')"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Apellido</ion-label>
+    <ion-input [(ngModel)]="surname" (ionFocus)="animateInput('surname')"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Nivel de Educación</ion-label>
+    <ion-input [(ngModel)]="educationLevel"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Fecha de Nacimiento</ion-label>
+    <mat-datepicker #picker></mat-datepicker>
+    <ion-input [matDatepicker]="picker" [(ngModel)]="birthdate"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="clearInputs()">Limpiar</ion-button>
+  <ion-button (click)="showInfo()">Mostrar</ion-button>
+</ion-content>
