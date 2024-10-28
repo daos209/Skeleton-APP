@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AnimationController, AlertController } from '@ionic/angular';
 
@@ -7,7 +7,7 @@ import { AnimationController, AlertController } from '@ionic/angular';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements AfterViewInit {
   name: string = '';
   surname: string = '';
   educationLevel: string = '';
@@ -21,6 +21,10 @@ export class HomePage {
     this.route.queryParams.subscribe(params => {
       this.name = params['username'];
     });
+  }
+
+  ngAfterViewInit() {
+    // Aquí puedes inicializar animaciones u otras configuraciones
   }
 
   clearInputs() {
@@ -42,8 +46,10 @@ export class HomePage {
   }
 
   animateInput(inputName: string) {
-    const element = document.querySelector(`ion-input[name=${inputName}]`);
-    if (element) {
+    const element = document.querySelector(`ion-input[name="${inputName}"]`);
+
+    // Comprueba que el elemento es un Element antes de animar
+    if (element instanceof HTMLElement) {
       const animation = this.animationCtrl.create()
         .addElement(element)
         .duration(1000)
@@ -53,6 +59,8 @@ export class HomePage {
         .fromTo('opacity', '0.5', '1');
         
       animation.play();
+    } else {
+      console.warn(`Elemento no encontrado: ${inputName}`);
     }
   }
 }
