@@ -7,7 +7,9 @@ import { AnimationController, AlertController } from '@ionic/angular';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
+
 export class HomePage implements AfterViewInit {
+
   name: string = '';
   surname: string = '';
   educationLevel: string = '';
